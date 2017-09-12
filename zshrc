@@ -34,9 +34,20 @@ eval "$(rbenv init -)"
 # Travis CI
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
+
+export ANDROID_HOME="/Users/donwun/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
+
+export PATH="/Users/donwun/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Include local settings
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+export PATH="${HOME}/.sbtenv/bin:${PATH}"
+eval "$(sbtenv init -)"
